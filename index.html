@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yun-Chieh (Angela) Portfolio</title>
+    <link rel="stylesheet" href="index_style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="logo"><a href="index.html"><img src="Pic/logo_yt.png" alt="YuncT"></a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#featured-works">Featured Works</a></li>
+            </ul>
+            <a href="about/chatbot.html" class="cta-nav-button">💬 Ask Me Anything</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Angela.</h1>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        
+<!-- Project 1: Kana Master -->
+<div class="project-card animate-on-scroll">
+    <div class="project-info">
+        <h3>Kana Master</h3>
+        <p>Designed an interactive web tool with AI-powered pronunciation feedback to help Japanese learners master Hiragana, improving speaking confidence for users who previously struggled with pitch accent recognition.</p>
+        <div class="project-tags">
+            <span class="tag">Web Design</span>
+            <span class="tag">UX/UI Design</span>
+            <span class="tag">AI Integration</span>
+            <span class="tag">Interactive Learning</span>
+        </div>
+    </div>
+    <div class="project-image">
+        <div class="image-overlay">
+            <img src="Pic/kanamaster.png" alt="Kana Master Web">
+            <div class="overlay-content">
+                <a href="project1/project1.html" class="overlay-btn">View Project</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 2: Promotional Video (Data for Good) -->
+<div class="project-card animate-on-scroll">
+    <div class="project-info">
+        <h3>Promotional Video<br>(Data for Good)</h3>
+        <p>Created a 2D animated promotional video that transforms complex data concepts into an accessible visual story, helping Data for Good expand brand awareness and attract nonprofit partners and volunteers.</p>
+        <div class="project-tags">
+            <span class="tag">Video Production</span>
+            <span class="tag">Digital Storytelling</span>
+            <span class="tag">Brand Strategy</span>
+            <span class="tag">Motion Design</span>
+        </div>
+    </div>
+    <div class="project-image">
+        <div class="image-overlay">
+            <img src="Pic/promotional_ani.png" alt="Promotional Video">
+            <div class="overlay-content">
+                <a href="project2/project2.html" class="overlay-btn">View Project</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 3: AskBC -->
+<div class="project-card animate-on-scroll">
+    <div class="project-info">
+        <h3>AskBC</h3>
+        <p>Led the design and research for an AI chatbot prototype that guides BC residents through complex tax processes with personalized, step-by-step instructions—reducing reliance on external help for older adults and non-English speakers.</p>
+        <div class="project-tags">
+            <span class="tag">UX Research</span>
+            <span class="tag">Conversational Design</span>
+            <span class="tag">Accessibility</span>
+            <span class="tag">Project Management</span>
+        </div>
+    </div>
+    <div class="project-image">
+        <div class="image-overlay">
+            <img src="project3/askbc.png" alt="AskBC">
+            <div class="overlay-content">
+                <a href="project3/project3.html" class="overlay-btn">View Project</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 4: Mic Check 1,2 -->
+<div class="project-card animate-on-scroll">
+    <div class="project-info">
+        <h3>Mic Check 1,2</h3>
+        <p>Designed and developed an interactive narrative game using branching dialogue and time-sensitive mechanics to translate the psychological experience of performance anxiety into an immersive player experience.</p>
+        <div class="project-tags">
+            <span class="tag">Game Design</span>
+            <span class="tag">Narrative Design</span>
+            <span class="tag">Video Production</span>
+            <span class="tag">Generative AI Design</span>
+        </div>
+    </div>
+    <div class="project-image">
+        <div class="image-overlay">
+            <img src="project4/mic_check.png" alt="Mic Check 1,2">
+            <div class="overlay-content">
+                <a href="project4/project4.html" class="overlay-btn">View Project</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </section>
+
+    <!-- Featured Works Section -->
+    <section id="featured-works" class="featured-works">
+        <h2>Featured Works</h2>
+        
+        <div class="works-carousel">
+            <div class="carousel-container">
+                <div class="works-track" id="worksTrack">
+                    <!-- Works will be dynamically generated -->
+                </div>
+            </div>
+            
+            <div class="carousel-navigation">
+                <button class="nav-btn prev-btn" id="prevBtn"><<</button>
+                <button class="nav-btn next-btn" id="nextBtn">>></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Works Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">×</button>
+            
+            <div class="modal-main">
+                <div class="modal-left">
+                    <div class="modal-image-container">
+                        <img class="modal-image" id="modalImage" src="" alt="">
+                        <button class="image-nav prev-image" id="prevImage">‹</button>
+                        <button class="image-nav next-image" id="nextImage">›</button>
+                    </div>
+                </div>
+                
+                <div class="modal-right">
+                    <h3 class="modal-title" id="modalTitle"></h3>
+                    <div class="client-pill">Linkedin Post</div>
+                    <p class="modal-description" id="modalDescription"></p>
+                    
+                    <a class="modal-link" id="modalLink" href="" target="_blank"></a>
+                </div>
+            </div>
+            
+            <div class="modal-bottom">
+                <button class="modal-nav prev-work" id="prevWork"><< Prev Work</button>
+                <button class="modal-nav next-work" id="nextWork">Next Work >></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-divider"></div>
+        <h3>Let's Get in Touch !</h3>
+        <div class="email">tsai.yunc@northeastern.edu</div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yun-chieh-angela-tsai-b6687b327" class="social-link linkedin-icon">in</a>
+            <a href="mailto:tsai.yunc@northeastern.edu" class="social-link email-icon">@</a>
+        </div>
+        <div class="copyright">©2025 Yun-Chieh (Angela) Tsai</div>
+    </footer>
+
+    <script src="autohideheader.js"></script>
+    <script src="scrollanimation.js"></script>
+    <script src="featured-works.js"></script>
+</body>
+</html>

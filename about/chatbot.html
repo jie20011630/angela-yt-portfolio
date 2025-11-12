@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask About Angela</title>
+    <link rel="stylesheet" href="chatbot_style.css">
+    <link rel="stylesheet" href="../index_style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="logo"><a href="index.html"><img src="../Pic/logo_yt.png" alt="YuncT"></a></div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#featured-works">Featured Works</a></li>
+            </ul>
+            <a href="chatbot.html" class="cta-nav-button">💬 Ask Me Anything</a>
+        </nav>
+    </header>
+
+    <!-- Main Chatbot Section -->
+    <section class="chatbot-section">
+        <div class="chatbot-container">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <h1>Ask About Angela!</h1>
+                <p class="chat-subtitle">Have questions? Angela's AI assistant is here to help.</p>
+            </div>
+
+            <!-- Chat Window -->
+            <div class="chat-window">
+                <div id="chatMessages" class="chat-messages">
+                    <div class="message bot-message">
+                        <img src="../Pic/ai-avatar.jpg" alt="AI" class="message-avatar">
+                        <div class="message-content">
+                            <p>Hi! I'm Angela's AI assistant. I can answer questions about her background, experience, skills, and projects. How can I help you today?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="suggested-questions">
+                    <button class="suggestion-btn" onclick="askQuestion('What program is Angela in?')">
+                        What program is Angela in?
+                    </button>
+                    <button class="suggestion-btn" onclick="askQuestion('Tell me about her work experience')">
+                        Tell me about her work experience
+                    </button>
+                    <button class="suggestion-btn" onclick="askQuestion('What are her skills?')">
+                        What are her skills?
+                    </button>
+                    <button class="suggestion-btn" onclick="askQuestion('Show me her projects')">
+                        Show me her projects
+                    </button>
+                    <button class="suggestion-btn" onclick="askQuestion('Can I download her resume?')">
+                        Can I download her resume?
+                    </button>
+                    <button class="suggestion-btn" onclick="askQuestion('How can I connect with her?')">
+                        How can I connect with her?
+                    </button>
+                </div>
+
+                <!-- Input Area -->
+                <div class="chat-input-area">
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        placeholder="Type your question here..."
+                        onkeypress="handleKeyPress(event)"
+                    >
+                    <button onclick="sendMessage()" id="sendBtn">
+                        <span>Send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF Modal -->
+    <div class="pdf-modal-overlay" id="pdfModal">
+        <div class="pdf-modal-content">
+            <button class="pdf-modal-close" onclick="closePdfModal()">×</button>
+            <h3>Yun-Chieh's Resume</h3>
+            <iframe 
+                id="pdfViewer"
+                src="" 
+                width="100%" 
+                height="600px"
+                style="border: none; border-radius: 8px;">
+            </iframe>
+            <a href="../resume/Angela_resume.pdf" download class="pdf-download-btn">
+                Download PDF
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-divider"></div>
+        <h3>Let's Get in Touch !</h3>
+        <div class="email">tsai.yunc@northeastern.edu</div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yun-chieh-angela-tsai-b6687b327" class="social-link linkedin-icon">in</a>
+            <a href="mailto:tsai.yunc@northeastern.edu" class="social-link email-icon">@</a>
+        </div>
+        <div class="copyright">©2025 Yun-Chieh (Angela) Tsai</div>
+    </footer>
+
+    <script src="chatbot.js"></script>
+    <script src="../autohideheader.js"></script>
+</body>
+</html>
