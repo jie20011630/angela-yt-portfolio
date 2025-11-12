@@ -1,12 +1,12 @@
 /* Project Page Styles */
 body {
     background-color: #f5f6f0;
-    padding-top: 0; /* No padding needed if header is not fixed */
+    padding-top: 0;
 }
 
 /* Project Title */
 .project-title {
-    padding: 100px 80px 10px; /* Reduced bottom padding to get title closer to border */
+    padding: 100px 80px 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     max-width: 1200px;
     margin: 0 auto;
@@ -16,7 +16,7 @@ body {
     font-size: 2.5rem;
     color: #1e3932;
     font-weight: 600;
-    margin-bottom: 5px; /* Reduced margin to get title closer to border */
+    margin-bottom: 5px;
 }
 
 /* Project Details */
@@ -126,8 +126,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Data for Good Section */
-
 .inspiration-content {
     flex: 2;
 }
@@ -162,6 +160,7 @@ body {
     letter-spacing: 0.3px;
 }
 
+/* Data for Good Section */
 .data-for-good {
     display: flex;
     align-items: center;
@@ -197,7 +196,8 @@ body {
 }
 
 /* Marketing Specialist and Animation Course Sections */
-.marketing-specialist, .animation-course {
+.marketing-specialist,
+.animation-course {
     flex-direction: row;
     margin-top: 40px;
     margin-bottom: 60px;
@@ -242,7 +242,7 @@ body {
     font-weight: 400;
 }
 
-/* Goals and Objectives Section */
+/* Goals Section */
 .goals-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -403,7 +403,7 @@ body {
 
 .process-left h3 {
     margin-top: 0;
-} 
+}
 
 /* Animation Section */
 .animation {
@@ -513,13 +513,19 @@ body {
     letter-spacing: 0.5px;
 }
 
-
 .video-container {
     max-width: 800px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 12px;
-  }
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-container video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
 /* Reflection Section */
 .reflection-section {
@@ -630,9 +636,36 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive Design */
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+    .project-title {
+        padding: 100px 40px 10px;
+    }
+    
+    .project-details,
+    .project-overview,
+    .inspiration-section,
+    .goals-section,
+    .process-section,
+    .latest-version-section,
+    .reflection-section {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    
+    .project-navigation {
+        padding: 20px 40px 60px;
+    }
+}
+
+/* Tablet/Mobile (992px and below) */
 @media (max-width: 992px) {
-    .project-details, 
+    /* Stack all two-column layouts */
+    .project-details,
     .inspiration-block,
     .marketing-specialist,
     .animation-course,
@@ -644,7 +677,8 @@ body {
         flex-direction: column;
     }
     
-    .project-image-container, 
+    /* Reset all flex items to full width */
+    .project-image-container,
     .project-info-container,
     .inspiration-content,
     .inspiration-image,
@@ -662,10 +696,12 @@ body {
     .animation .process-right {
         width: 100%;
         max-width: 100%;
+        flex: 1;
         padding-right: 0;
         padding-left: 0;
     }
     
+    /* Move images to top */
     .inspiration-image,
     .data-for-good .inspiration-image,
     .process-image,
@@ -686,46 +722,38 @@ body {
     .storyboard .process-image img {
         max-width: 100%;
     }
-    
-    .goal-item {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .goal-number {
-        font-size: 2.5rem;
-        min-width: auto;
-    }
-    
-    .animation-timeline {
-        padding-left: 25px;
-    }
-    
-    .timeline-point {
-        left: -32px;
-        width: 12px;
-        height: 12px;
-    }
 }
 
+/* Mobile Large (768px and below) */
 @media (max-width: 768px) {
-    .project-title, 
-    .project-details, 
-    .project-overview,
-    .inspiration-section,
-    .goals-section,
-    .process-section {
-        padding: 30px 40px;
+    .project-title {
+        padding: 90px 20px 10px;
     }
     
     .project-title h1 {
         font-size: 2rem;
     }
     
+    .project-details,
+    .project-overview,
+    .inspiration-section,
+    .goals-section,
+    .process-section,
+    .latest-version-section,
+    .reflection-section {
+        padding: 30px 20px;
+    }
+    
+    .project-info-container {
+        padding-left: 0;
+    }
+    
     .project-overview h2,
     .inspiration-section h2,
     .goals-section h2,
-    .process-section h2 {
+    .process-section h2,
+    .latest-version-section h2,
+    .reflection-section h2 {
         font-size: 1.5rem;
     }
     
@@ -738,14 +766,33 @@ body {
         font-size: 1rem;
     }
     
+    .numbered-item p {
+        font-size: 0.9rem;
+    }
+    
+    .goal-item {
+        flex-direction: row;
+        gap: 15px;
+    }
+    
     .goal-number {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        min-width: 80px;
+    }
+    
+    .goal-content {
+        padding-top: 8px;
     }
     
     .goal-content h3 {
         font-size: 1.2rem;
     }
     
+    .goal-content p {
+        font-size: 0.95rem;
+    }
+    
+    /* Timeline adjustments */
     .animation-timeline {
         padding-left: 20px;
     }
@@ -755,32 +802,116 @@ body {
         width: 10px;
         height: 10px;
     }
+    
+    .timeline-image {
+        height: 300px;
+    }
+    
+    /* Reflection */
+    .reflection-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .reflection-box {
+        padding: 25px;
+    }
+    
+    .reflection-box h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Navigation */
+    .project-navigation {
+        padding: 20px 20px 40px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-button {
+        text-align: center;
+        width: 100%;
+    }
 }
 
+/* Mobile Small (480px and below) */
 @media (max-width: 480px) {
-    .project-title, 
-    .project-details, 
-    .project-overview,
-    .inspiration-section,
-    .goals-section,
-    .process-section {
-        padding: 20px;
+    .project-title {
+        padding: 80px 15px 10px;
     }
     
     .project-title h1 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+    }
+    
+    .project-details,
+    .project-overview,
+    .inspiration-section,
+    .goals-section,
+    .process-section,
+    .latest-version-section,
+    .reflection-section {
+        padding: 25px 15px;
+    }
+    
+    .client-pill {
+        font-size: 0.9rem;
+        padding: 6px 14px;
     }
     
     .info-item h3 {
-        font-size: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .info-item p {
+        font-size: 0.95rem;
+    }
+    
+    .project-overview h2,
+    .inspiration-section h2,
+    .goals-section h2,
+    .process-section h2,
+    .latest-version-section h2,
+    .reflection-section h2 {
+        font-size: 1.4rem;
+    }
+    
+    .inspiration-block h3,
+    .process-block h3 {
+        font-size: 1.2rem;
     }
     
     .numbered-item {
         margin-bottom: 20px;
     }
     
+    .numbered-item h4 {
+        font-size: 0.95rem;
+    }
+    
+    .numbered-item p {
+        font-size: 0.85rem;
+    }
+    
+    .goal-item {
+        gap: 10px;
+    }
+    
     .goal-number {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        min-width: 60px;
+    }
+    
+    .goal-content {
+        padding-top: 5px;
+    }
+    
+    .goal-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .goal-content p {
+        font-size: 0.9rem;
     }
     
     .animation-timeline {
@@ -791,5 +922,46 @@ body {
         left: -22px;
         width: 8px;
         height: 8px;
+    }
+    
+    .timeline-content h4 {
+        font-size: 1rem;
+    }
+    
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
+    
+    .animation-techniques {
+        font-size: 0.85rem;
+    }
+    
+    .timeline-image {
+        height: 220px;
+    }
+    
+    .reflection-box {
+        padding: 20px;
+    }
+    
+    .reflection-box h3 {
+        font-size: 1.2rem;
+    }
+    
+    .reflection-box h4 {
+        font-size: 1rem;
+    }
+    
+    .reflection-box p {
+        font-size: 0.9rem;
+    }
+    
+    .project-navigation {
+        padding: 15px 15px 30px;
+    }
+    
+    .nav-button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
     }
 }
