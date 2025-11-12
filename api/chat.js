@@ -3,7 +3,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    const { message } = req.body;
+    const { message, history } = req.body;
 
     const resumeInfo = `
 You are an AI assistant for Angela Tsai (full name: Yun-Chieh Angela Tsai). Answer questions about HER in third person.
@@ -165,41 +165,62 @@ Always use markdown format for links: [text](url)
 - Remember: You're helping visitors learn about her professional background, with focus on North American experience
 `;
 
-    try {
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': process.env.ANTHROPIC_API_KEY,
-                'anthropic-version': '2023-06-01'
-            },
-            body: JSON.stringify({
-                model: 'claude-3-5-haiku-20241022',
-                max_tokens: 500,
-                messages: [
-                    {
-                        role: 'user',
-                        content: `${resumeInfo}\n\nUser question: ${message}`
-                    }
-                ]
-            })
-        });
-
-        const data = await response.json();
-        
-        if (data.content && data.content[0]) {
-            return res.status(200).json({
-                reply: data.content[0].text
+try {
+    // ⬇️ NEW: Build messages array with history
+    const messages = [];
+    
+    // Add system message
+    messages.push({
+        role: 'user',
+        content: resumeInfo
+    });
+    
+    // ⬇️ NEW: Add conversation history if it exists
+    if (history && history.length > 0) {
+        // Convert history format to Claude format
+        history.forEach(msg => {
+            messages.push({
+                role: msg.role === 'user' ? 'user' : 'assistant',
+                content: msg.content
             });
-        } else {
-            throw new Error('Invalid response from Claude');
-        }
-
-    } catch (error) {
-        console.error('Error:', error);
-        return res.status(500).json({ 
-            error: 'Failed to get response',
-            details: error.message 
+        });
+    } else {
+        // If no history, just add the current message
+        messages.push({
+            role: 'user',
+            content: message
         });
     }
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': process.env.ANTHROPIC_API_KEY,
+            'anthropic-version': '2023-06-01'
+        },
+        body: JSON.stringify({
+            model: 'claude-3-5-haiku-20241022',
+            max_tokens: 500,
+            messages: messages.slice(1)  // ⬅️ 移除第一個 system message,因為它會作為 context
+        })
+    });
+
+    const data = await response.json();
+    
+    if (data.content && data.content[0]) {
+        return res.status(200).json({
+            reply: data.content[0].text
+        });
+    } else {
+        throw new Error('Invalid response from Claude');
+    }
+
+} catch (error) {
+    console.error('Error:', error);
+    return res.status(500).json({ 
+        error: 'Failed to get response',
+        details: error.message 
+    });
+}
 }

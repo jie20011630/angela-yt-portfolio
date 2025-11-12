@@ -2,6 +2,9 @@ const chatMessages = document.getElementById('chatMessages');
 const userInput = document.getElementById('userInput');
 const sendBtn = document.getElementById('sendBtn');
 
+// ⬇️ NEW: Store conversation history
+let conversationHistory = [];
+
 // Send message function
 async function sendMessage() {
     const message = userInput.value.trim();
@@ -11,6 +14,12 @@ async function sendMessage() {
     addMessage(message, 'user');
     userInput.value = '';
     
+    // ⬇️ NEW: Add user message to history
+    conversationHistory.push({
+        role: 'user',
+        content: message
+    });
+    
     // Disable send button
     sendBtn.disabled = true;
     
@@ -18,13 +27,16 @@ async function sendMessage() {
     showTypingIndicator();
     
     try {
-        // Call your API
+        // ⬇️ NEW: Send entire conversation history
         const response = await fetch('/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ message: message })
+            body: JSON.stringify({ 
+                message: message,
+                history: conversationHistory.slice(-6)  // only show last 6 messages
+            })
         });
         
         const data = await response.json();
@@ -35,6 +47,12 @@ async function sendMessage() {
         // Display AI response
         if (data.reply) {
             addMessage(data.reply, 'bot');
+            
+            // ⬇️ NEW: Add AI response to history
+            conversationHistory.push({
+                role: 'assistant',
+                content: data.reply
+            });
         } else {
             addMessage('Sorry, I\'m unable to answer right now. Please try again later!', 'bot');
         }
@@ -91,16 +109,16 @@ function addMessage(text, sender) {
         '<a href="$2" target="_blank">$1</a>'
     );
     
-    // ⬇️ NEW: Handle bold text **text**
+    // Handle bold text **text**
     formattedText = formattedText.replace(
         /\*\*([^*]+)\*\*/g,
         '<strong>$1</strong>'
     );
     
-    // ⬇️ NEW: Handle line breaks \n
+    // Handle line breaks \n
     formattedText = formattedText.replace(/\n/g, '<br>');
     
-    // ⬇️ NEW: Ensure bullet points display properly
+    // Ensure bullet points display properly
     formattedText = formattedText.replace(/•/g, '•');
     
     contentDiv.innerHTML = `<p>${formattedText}</p>`;
