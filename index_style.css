@@ -110,6 +110,7 @@ nav ul li a:hover {
     background-image: url(Pic/background.jpg);
     background-attachment: fixed;
     background-size: cover;
+    background-position: center center;
     padding: 0 80px;
     position: relative;
 }
@@ -793,6 +794,14 @@ html {
         font-size: 0.85rem;
     }
 
+    /* ⬇️ 修正: Hero Section 手機版 */
+    .hero {
+        height: 70vh;  /* 改成 70vh,更短一點 */
+        background-attachment: scroll;  /* ✅ 改成 scroll,手機才能看到背景! */
+        background-position: center 30%;  /* 調整位置讓櫻花更明顯 */
+        padding: 0 20px;
+    }
+    
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -886,10 +895,17 @@ html {
     }
     
     .cta-nav-button {
-        padding: 8px 16px;
-        font-size: 0.8rem;
+        padding: 8px 14px;
+        font-size: 0.75rem;
     }
 
+    /* ⬇️ 修正: Hero Section 小手機 */
+    .hero {
+        height: 60vh;  /* 更短 */
+        background-attachment: scroll;  /* 確保背景顯示 */
+        background-position: center 25%;  /* 讓櫻花在更好的位置 */
+    }
+    
     .hero h1 {
         font-size: 2rem;
         letter-spacing: 1px;
