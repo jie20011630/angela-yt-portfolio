@@ -982,16 +982,10 @@ body {
     }
 
     .visual-bubble::after {
-        left: 40px;
-        bottom: -20px;
-        top: auto;
-        transform: rotate(225deg);
+        display: none;
     }
 
-    .visual-examples .visual-example:nth-child(2) .visual-bubble::after {
-        top: auto;
-        bottom: -20px;
-    }
+
     
     /* Design layers stack */
     .design-layers {
