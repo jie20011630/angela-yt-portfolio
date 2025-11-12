@@ -197,6 +197,31 @@ nav ul li a:hover {
     border: 1px solid #d4e5c9;
 }
 
+
+.message-content strong {
+    font-weight: 600;
+    color: #1e3932;
+}
+
+.bot-message .message-content strong {
+    color: #1e3932;
+}
+
+.user-message .message-content strong {
+    color: white;
+}
+
+.message-content br {
+    display: block;
+    content: "";
+    margin: 0.5em 0;
+}
+
+.message-content p {
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
 .typing-indicator span {
     height: 8px;
     width: 8px;

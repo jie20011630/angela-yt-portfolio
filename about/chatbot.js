@@ -60,6 +60,10 @@ function addMessage(text, sender) {
         avatar.src = '../Pic/ai-avatar.jpg';
         avatar.alt = 'AI Assistant';
         avatar.className = 'message-avatar';
+        avatar.onerror = function() {
+            console.error('Avatar image failed to load:', avatar.src);
+            this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ccircle cx="50" cy="50" r="50" fill="%23e5f2d2"/%3E%3Ctext x="50" y="50" text-anchor="middle" dy=".3em" font-size="40" fill="%231e3932"%3EAI%3C/text%3E%3C/svg%3E';
+        };
         messageDiv.appendChild(avatar);
     }
     
@@ -87,17 +91,20 @@ function addMessage(text, sender) {
         '<a href="$2" target="_blank">$1</a>'
     );
     
+    // ⬇️ NEW: Handle bold text **text**
+    formattedText = formattedText.replace(
+        /\*\*([^*]+)\*\*/g,
+        '<strong>$1</strong>'
+    );
+    
+    // ⬇️ NEW: Handle line breaks \n
+    formattedText = formattedText.replace(/\n/g, '<br>');
+    
+    // ⬇️ NEW: Ensure bullet points display properly
+    formattedText = formattedText.replace(/•/g, '•');
+    
     contentDiv.innerHTML = `<p>${formattedText}</p>`;
     messageDiv.appendChild(contentDiv);
-    
-    // Add user avatar after content
-    if (sender === 'user') {
-        // Optional: add user avatar if you have one
-        // const avatar = document.createElement('img');
-        // avatar.src = '../Pic/user-avatar.png';
-        // avatar.className = 'message-avatar';
-        // messageDiv.appendChild(avatar);
-    }
     
     chatMessages.appendChild(messageDiv);
     
@@ -115,6 +122,9 @@ function showTypingIndicator() {
     avatar.src = '../Pic/ai-avatar.jpg';
     avatar.alt = 'AI Assistant';
     avatar.className = 'message-avatar';
+    avatar.onerror = function() {
+        this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ccircle cx="50" cy="50" r="50" fill="%23e5f2d2"/%3E%3Ctext x="50" y="50" text-anchor="middle" dy=".3em" font-size="40" fill="%231e3932"%3EAI%3C/text%3E%3C/svg%3E';
+    };
     
     const indicator = document.createElement('div');
     indicator.className = 'typing-indicator';
@@ -151,7 +161,7 @@ function openPdfModal(pdfUrl) {
     const viewer = document.getElementById('pdfViewer');
     viewer.src = pdfUrl;
     modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
 }
 
 // Close PDF Modal
@@ -159,8 +169,8 @@ function closePdfModal() {
     const modal = document.getElementById('pdfModal');
     const viewer = document.getElementById('pdfViewer');
     modal.classList.remove('active');
-    viewer.src = ''; // Clear iframe
-    document.body.style.overflow = ''; // Restore scrolling
+    viewer.src = '';
+    document.body.style.overflow = '';
 }
 
 // Click outside modal to close
