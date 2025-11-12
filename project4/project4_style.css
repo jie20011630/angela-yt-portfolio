@@ -655,7 +655,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     background-color: #f5f6f0;
-    padding: 80px 80px 60px;
+    padding: 80px 80px 60px 80px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -684,7 +684,7 @@ body {
 }
 
 .pv-item {
-    background-color: #0d3a2b;
+    background-color: #0d3a2b;  
     border-radius: 18px;
     padding: 40px;
     display: flex;
@@ -694,30 +694,30 @@ body {
 
 .pv-item .pv-text h3,
 .pv-item .pv-text p {
-    color: #f5f6f0;
+    color: #f5f6f0;  
 }
 
+
 .pv-item-reverse {
-    background-color: #f5f6f0;
+    background-color: #f5f6f0;  
     padding: 40px;
     display: flex;
     align-items: center;
     gap: 40px;
-    flex-direction: row-reverse;
 }
 
 .pv-item-reverse .pv-text h3,
 .pv-item-reverse .pv-text p {
-    color: #1e3932;
+    color: #1e3932;  
 }
 
 .pv-text {
-    flex: 0 0 45%;
+    flex: 0 0 45%;  
 }
 
 .pv-media {
     flex: 0 0 55%;
-    padding: 20px 30px 20px 0;
+    padding: 20px 30px 20px 0;  
 }
 
 .pv-text h3 {
