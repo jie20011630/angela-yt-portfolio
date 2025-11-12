@@ -111,6 +111,14 @@ function renderWorks() {
     });
 }
 
+// ⬇️ 修正:計算可見項目數量
+function getVisibleItems() {
+    const width = window.innerWidth;
+    if (width <= 480) return 1;  
+    if (width <= 768) return 2;  
+    return 3;  
+}
+
 // Update carousel position
 function updateCarouselPosition() {
     const itemWidth = 320; // 300px width + 20px gap
@@ -118,10 +126,12 @@ function updateCarouselPosition() {
     worksTrack.style.transform = `translateX(${translateX}px)`;
 }
 
-// Update navigation button states
 function updateNavigationButtons() {
+    const visibleItems = getVisibleItems();
+    const maxIndex = Math.max(0, featuredWorks.length - visibleItems);
+    
     prevBtn.disabled = currentWorkIndex === 0;
-    nextBtn.disabled = currentWorkIndex >= featuredWorks.length - 3; // Show 3 items at once
+    nextBtn.disabled = currentWorkIndex >= maxIndex;
     
     if (prevBtn.disabled) {
         prevBtn.style.opacity = '0.5';
@@ -152,10 +162,16 @@ function openModal(workIndex) {
     modalImage.src = work.images[currentImageIndex];
     modalTitle.innerHTML = work.title;
     modalDescription.innerHTML = work.description;
-    modalLink.href = work.link;
-    modalLink.textContent = work.linkText;
     
-    // Show/hide image navigation based on number of images
+    if (work.link && work.linkText) {
+        modalLink.href = work.link;
+        modalLink.textContent = work.linkText;
+        modalLink.style.display = 'inline';
+    } else {
+        modalLink.style.display = 'none';
+    }
+    
+    // Show/hide image navigation
     if (work.images.length > 1) {
         prevImage.style.display = 'flex';
         nextImage.style.display = 'flex';
@@ -164,10 +180,7 @@ function openModal(workIndex) {
         nextImage.style.display = 'none';
     }
     
-    // Update modal navigation buttons
     updateModalNavigation();
-    
-    // Show modal
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -183,16 +196,13 @@ function closeModal() {
 function updateModalNavigation() {
     const work = featuredWorks[currentWorkIndex];
     
-    // Image navigation
     prevImage.disabled = currentImageIndex === 0;
     nextImage.disabled = currentImageIndex === work.images.length - 1;
-    
-    // Work navigation
     prevWork.disabled = currentWorkIndex === 0;
     nextWork.disabled = currentWorkIndex === featuredWorks.length - 1;
 }
 
-// Navigate to previous work
+// Navigate functions
 function navigateToPrevWork() {
     if (currentWorkIndex > 0) {
         currentWorkIndex--;
@@ -200,7 +210,6 @@ function navigateToPrevWork() {
     }
 }
 
-// Navigate to next work
 function navigateToNextWork() {
     if (currentWorkIndex < featuredWorks.length - 1) {
         currentWorkIndex++;
@@ -208,7 +217,6 @@ function navigateToNextWork() {
     }
 }
 
-// Navigate to previous image
 function navigateToPrevImage() {
     const work = featuredWorks[currentWorkIndex];
     if (currentImageIndex > 0) {
@@ -218,7 +226,6 @@ function navigateToPrevImage() {
     }
 }
 
-// Navigate to next image
 function navigateToNextImage() {
     const work = featuredWorks[currentWorkIndex];
     if (currentImageIndex < work.images.length - 1) {
@@ -230,10 +237,8 @@ function navigateToNextImage() {
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize carousel
     initializeCarousel();
     
-    // Carousel navigation
     prevBtn.addEventListener('click', () => {
         if (currentWorkIndex > 0) {
             currentWorkIndex--;
@@ -243,27 +248,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     nextBtn.addEventListener('click', () => {
-        if (currentWorkIndex < featuredWorks.length - 3) {
+        const visibleItems = getVisibleItems();
+        const maxIndex = Math.max(0, featuredWorks.length - visibleItems);
+        if (currentWorkIndex < maxIndex) {
             currentWorkIndex++;
             updateCarouselPosition();
             updateNavigationButtons();
         }
     });
     
-    // Modal controls
     modalClose.addEventListener('click', closeModal);
-    
     modalOverlay.addEventListener('click', (e) => {
-        if (e.target === modalOverlay) {
-            closeModal();
-        }
+        if (e.target === modalOverlay) closeModal();
     });
     
-    // Image navigation
     prevImage.addEventListener('click', navigateToPrevImage);
     nextImage.addEventListener('click', navigateToNextImage);
-    
-    // Work navigation
     prevWork.addEventListener('click', navigateToPrevWork);
     nextWork.addEventListener('click', navigateToNextWork);
     
@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Touch/swipe support for mobile
+    // Touch/swipe support
     let startX = 0;
     let startY = 0;
     
@@ -309,17 +309,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const diffX = startX - endX;
         const diffY = startY - endY;
         
-        // Only handle horizontal swipes
         if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
             if (diffX > 0) {
-                // Swipe left - next image/work
                 if (currentImageIndex < featuredWorks[currentWorkIndex].images.length - 1) {
                     navigateToNextImage();
                 } else {
                     navigateToNextWork();
                 }
             } else {
-                // Swipe right - previous image/work
                 if (currentImageIndex > 0) {
                     navigateToPrevImage();
                 } else {
@@ -330,8 +327,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Handle window resize
 window.addEventListener('resize', () => {
+    updateNavigationButtons();
+    updateCarouselPosition();
     if (isModalOpen) {
         updateModalNavigation();
     }
