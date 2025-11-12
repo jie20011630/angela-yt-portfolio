@@ -1,12 +1,12 @@
-* Project Page Styles */
+/* Project Page Styles */
 body {
     background-color: #f5f6f0;
-    padding-top: 0; /* No padding needed if header is not fixed */
+    padding-top: 0;
 }
 
 /* Project Title */
 .project-title {
-    padding: 120px 80px 10px; /* Reduced bottom padding to get title closer to border */
+    padding: 100px 80px 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     max-width: 1200px;
     margin: 0 auto;
@@ -16,7 +16,7 @@ body {
     font-size: 2.5rem;
     color: #1e3932;
     font-weight: 600;
-    margin-bottom: 5px; /* Reduced margin to get title closer to border */
+    margin-bottom: 5px;
 }
 
 /* Project Details */
@@ -131,6 +131,7 @@ body {
     text-align: center;
 }
 
+/* Worldbuilding Section */
 .worldbuilding-section {
     padding: 60px 80px;
     max-width: 1200px;
@@ -177,6 +178,7 @@ body {
     margin-bottom: 18px;
 }
 
+/* Character Profiles */
 .character-profiles {
     margin-top: 60px;
     display: flex;
@@ -238,22 +240,7 @@ body {
     color: #333;
 }
 
-@media (max-width: 900px) {
-    .character-profile,
-    .character-profile.reverse {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .character-details {
-        max-width: none;
-    }
-
-    .character-details ul {
-        text-align: left;
-    }
-}
-
+/* Storyline Section */
 .storyline-section {
     padding: 80px 80px 60px;
     max-width: 1200px;
@@ -377,26 +364,7 @@ body {
     color: #1e3932;
 }
 
-@media (max-width: 900px) {
-    .storyline-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .storyline-image {
-        flex: unset;
-    }
-
-    .outcome-circles {
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .outcome-circle {
-        margin: 0 auto;
-    }
-}
-
+/* Visual Concept Section */
 .visual-concept-section {
     padding: 80px 80px 60px;
     max-width: 1200px;
@@ -480,31 +448,9 @@ body {
 .visual-examples .visual-example:nth-child(2) .visual-bubble::after {
     bottom: auto;
     top: 40px;
-
 }
 
-@media (max-width: 900px) {
-    .visual-example {
-        flex-direction: column;
-    }
-
-    .visual-image,
-    .visual-bubble {
-        flex: unset;
-    }
-
-    .visual-bubble::after {
-        left: 40px;
-        bottom: -20px;
-        top: auto;
-        transform: rotate(225deg);
-    }
-
-    .visual-examples .visual-example:nth-child(2) .visual-bubble::after {
-        top: auto;
-    }
-}
-
+/* Core Experience Section */
 .core-experience-section {
     padding: 80px 80px 60px;
     max-width: 1200px;
@@ -561,25 +507,22 @@ body {
     gap: 32px;
 }
 
-/* 🔧 關鍵修復：外層 li 保持 flex，但要特別處理 */
 .design-layers-list > li {
     display: flex;
     gap: 24px;
     align-items: flex-start;
 }
 
-/* ✅ 內層的 ul（bullet points 的容器） */
 .design-layers-list ul {
     list-style-type: disc !important;
     list-style-position: outside !important;
     padding-left: 20px !important;
     margin: 10px 0 !important;
-    width: 100%; /* 確保佔滿空間 */
+    width: 100%;
 }
 
-/* ✅ 內層的 li（實際有 bullet points 的項目） */
 .design-layers-list ul li {
-    display: list-item !important;  /* 🎯 關鍵！強制顯示為 list-item */
+    display: list-item !important;
     margin-bottom: 8px !important;
     line-height: 1.6 !important;
     padding-left: 0 !important;
@@ -613,25 +556,7 @@ body {
     color: #333;
 }
 
-@media (max-width: 900px) {
-    .design-layers {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .design-layers-title {
-        text-align: center;
-    }
-
-    .design-layers-list li {
-        gap: 16px;
-    }
-
-    .layer-number {
-        width: auto;
-    }
-}
-
+/* Process Highlight Section */
 .process-highlight-section {
     padding: 80px 80px 60px;
     max-width: 1200px;
@@ -722,26 +647,222 @@ body {
     border-radius: 12px;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
     display: block;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
-@media (max-width: 900px) {
-    .process-highlight-section {
-        padding: 60px 40px;
-    }
+/* PV Section */
+.pv-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f5f6f0;
+    padding: 80px 80px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
 
-    .process-timeline {
-        padding-left: 35px;
-        gap: 50px;
-    }
+.pv-section h2 {
+    font-size: 1.8rem;
+    color: #1e3932;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
 
-    .process-timeline::before {
-        left: 16px;
-    }
+.pv-section > p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    max-width: 960px;
+}
 
-    .process-marker {
-        margin-left: -35px;
-    }
+.pv-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 30px;
+}
+
+.pv-item {
+    background-color: #0d3a2b;
+    border-radius: 18px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.pv-item .pv-text h3,
+.pv-item .pv-text p {
+    color: #f5f6f0;
+}
+
+.pv-item-reverse {
+    background-color: #f5f6f0;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-direction: row-reverse;
+}
+
+.pv-item-reverse .pv-text h3,
+.pv-item-reverse .pv-text p {
+    color: #1e3932;
+}
+
+.pv-text {
+    flex: 0 0 45%;
+}
+
+.pv-media {
+    flex: 0 0 55%;
+    padding: 20px 30px 20px 0;
+}
+
+.pv-text h3 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.pv-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.pv-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Reflection Section */
+.reflection-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 80px;
+    background-color: #f5f6f0;
+}
+
+.reflection-section h2 {
+    font-size: 1.8rem;
+    color: #1e3932;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.reflection-content {
+    display: flex;
+    gap: 40px;
+}
+
+.reflection-block {
+    flex: 1;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reflection-block.learnings {
+    background-color: #e7f7e0;
+}
+
+.reflection-block.next-steps {
+    background-color: #f0e6ff;
+}
+
+.reflection-block h3 {
+    font-size: 1.4rem;
+    color: #1e3932;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    opacity: 0.6;
+}
+
+.reflection-block.next-steps h3 {
+    color: #5a4a6a;
+}
+
+.reflection-block ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reflection-block li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.reflection-block li:last-child {
+    margin-bottom: 0;
+}
+
+.reflection-block li::before {
+    content: "•";
+    color: #1e3932;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.reflection-block.next-steps li::before {
+    color: #5a4a6a;
+}
+
+/* CTA Container */
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 40px 0 60px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #1e3932;
+    color: #f5f6f0;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 30px;
+    box-shadow: 0 10px 24px rgba(30, 57, 50, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #14573f;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(30, 57, 50, 0.25);
+}
+
+.cta-note {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #444;
+    text-align: center;
+    max-width: 600px;
 }
 
 /* Navigation Buttons */
@@ -775,98 +896,140 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* PV & Content Creation Section */
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
 
-.pv-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #f5f6f0;
-    padding: 80px 80px 60px 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+    .project-title {
+        padding: 100px 40px 10px;
+    }
+    
+    .project-details,
+    .project-overview,
+    .worldbuilding-section,
+    .storyline-section,
+    .visual-concept-section,
+    .core-experience-section,
+    .process-highlight-section,
+    .pv-section,
+    .reflection-section {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    
+    .project-navigation {
+        padding: 20px 40px 60px;
+    }
+    
+    .character-profile {
+        gap: 60px;
+    }
 }
 
-.pv-section h2 {
-    font-size: 1.8rem;
-    color: #1e3932;
-    font-weight: 600;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.pv-section > p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #333;
-    max-width: 960px;
-}
-
-.pv-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding-top: 30px;
-}
-
-.pv-item {
-    background-color: #0d3a2b;  
-    border-radius: 18px;
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.pv-item .pv-text h3,
-.pv-item .pv-text p {
-    color: #f5f6f0;  
-}
-
-
-.pv-item-reverse {
-    background-color: #f5f6f0;  
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.pv-item-reverse .pv-text h3,
-.pv-item-reverse .pv-text p {
-    color: #1e3932;  
-}
-
-.pv-text {
-    flex: 0 0 45%;  
-}
-
-.pv-media {
-    flex: 0 0 55%;
-    padding: 20px 30px 20px 0;  
-}
-
-.pv-text h3 {
-    font-size: 1.4rem;
-    margin-bottom: 16px;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.pv-text p {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin: 0;
-}
-
-.pv-media img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-}
-
+/* Tablet/Mobile (900px and below) */
 @media (max-width: 900px) {
+    /* Character profiles stack */
+    .character-profile,
+    .character-profile.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .character-details {
+        max-width: none;
+    }
+
+    .character-details ul {
+        text-align: left;
+    }
+    
+    /* Storyline card stack */
+    .storyline-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .storyline-image,
+    .storyline-text {
+        flex: unset;
+        width: 100%;
+    }
+
+    .outcome-circles {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .outcome-circle {
+        margin: 0 auto;
+    }
+    
+    /* Visual examples stack */
+    .visual-example {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .visual-image,
+    .visual-bubble {
+        flex: unset;
+        width: 100%;
+    }
+
+    .visual-bubble::after {
+        left: 40px;
+        bottom: -20px;
+        top: auto;
+        transform: rotate(225deg);
+    }
+
+    .visual-examples .visual-example:nth-child(2) .visual-bubble::after {
+        top: auto;
+        bottom: -20px;
+    }
+    
+    /* Design layers stack */
+    .design-layers {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .design-layers-title {
+        text-align: center;
+    }
+
+    .design-layers-list li {
+        gap: 16px;
+    }
+
+    .layer-number {
+        width: auto;
+    }
+    
+    /* Process timeline adjust */
+    .process-highlight-section {
+        padding: 60px 40px;
+    }
+
+    .process-timeline {
+        padding-left: 35px;
+        gap: 50px;
+    }
+
+    .process-timeline::before {
+        left: 16px;
+    }
+
+    .process-marker {
+        margin-left: -35px;
+    }
+    
+    /* PV items stack */
     .pv-item,
     .pv-item-reverse {
         flex-direction: column;
@@ -879,129 +1042,288 @@ body {
         flex: unset;
         width: 100%;
     }
+    
+    .pv-media {
+        padding: 0;
+    }
 }
 
-
-    /* Reflection Section */
+/* Mobile Large (768px and below) */
+@media (max-width: 768px) {
+    .project-title {
+        padding: 90px 20px 10px;
+    }
+    
+    .project-title h1 {
+        font-size: 2rem;
+    }
+    
+    .project-details {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+    
+    .project-info-container {
+        padding-left: 0;
+    }
+    
+    .project-overview,
+    .worldbuilding-section,
+    .storyline-section,
+    .visual-concept-section,
+    .core-experience-section,
+    .process-highlight-section,
+    .pv-section,
     .reflection-section {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 60px 80px;
-        background-color: #f5f6f0;
+        padding: 40px 20px;
     }
-
+    
+    .project-overview h2,
+    .worldbuilding-section h2,
+    .visual-concept-section h2,
+    .core-experience-section h2,
+    .process-highlight-section h2,
+    .pv-section h2,
     .reflection-section h2 {
-        font-size: 1.8rem;
-        color: #1e3932;
-        margin-bottom: 40px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        font-family: 'Playfair Display', serif;
-        font-weight: 600;
-        letter-spacing: 0.5px;
+        font-size: 1.5rem;
     }
-
-    .reflection-content {
-        display: flex;
+    
+    .worldbuilding-description h3 {
+        font-size: 1.2rem;
+    }
+    
+    .character-image {
+        flex: 0 0 220px;
+    }
+    
+    .character-image img {
+        max-width: 220px;
+    }
+    
+    .outcome-circle {
+        width: 200px;
+        height: 200px;
+        padding: 25px;
+        font-size: 0.9rem;
+    }
+    
+    .layer-number {
+        font-size: 2.2rem;
+    }
+    
+    .layer-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .process-timeline {
+        padding-left: 30px;
         gap: 40px;
     }
-
-    .reflection-block {
-        flex: 1;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    .process-timeline::before {
+        left: 14px;
     }
-
-    .reflection-block.learnings {
-        background-color: #e7f7e0;
-    }
-
-    .reflection-block.next-steps {
-        background-color: #f0e6ff;
-    }
-
-    .reflection-block h3 {
-        font-size: 1.4rem;
-        color: #1e3932;
-        margin-bottom: 20px;
-        font-family: 'Playfair Display', serif;
-        font-weight: 900;
-        letter-spacing: 0.5px;
-        opacity: 0.6;
-    }
-
-    .reflection-block.next-steps h3 {
-        color: #5a4a6a;
-    }
-
-    .reflection-block ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .reflection-block li {
+    
+    .process-marker {
+        width: 40px;
+        height: 40px;
         font-size: 1rem;
-        line-height: 1.8;
-        color: #333;
-        margin-bottom: 15px;
+        margin-left: -30px;
+    }
+    
+    .process-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .pv-text h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Reflection */
+    .reflection-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .reflection-block {
+        padding: 25px;
+    }
+    
+    /* Navigation */
+    .project-navigation {
+        padding: 20px 20px 40px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-button {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Mobile Small (480px and below) */
+@media (max-width: 480px) {
+    .project-title {
+        padding: 80px 15px 10px;
+    }
+    
+    .project-title h1 {
+        font-size: 1.7rem;
+    }
+    
+    .project-details,
+    .project-overview,
+    .worldbuilding-section,
+    .storyline-section,
+    .visual-concept-section,
+    .core-experience-section,
+    .process-highlight-section,
+    .pv-section,
+    .reflection-section {
+        padding: 30px 15px;
+    }
+    
+    .client-pill {
+        font-size: 0.9rem;
+        padding: 6px 14px;
+    }
+    
+    .info-item h3 {
+        font-size: 0.85rem;
+    }
+    
+    .info-item p {
+        font-size: 0.95rem;
+    }
+    
+    .project-overview h2,
+    .worldbuilding-section h2,
+    .visual-concept-section h2,
+    .core-experience-section h2,
+    .process-highlight-section h2,
+    .pv-section h2,
+    .reflection-section h2 {
+        font-size: 1.4rem;
+    }
+    
+    .worldbuilding-description h3 {
+        font-size: 1.1rem;
+    }
+    
+    .worldbuilding-description p,
+    .storyline-text p,
+    .visual-concept-section p,
+    .pv-text p {
+        font-size: 0.95rem;
+    }
+    
+    .character-image {
+        flex: 0 0 180px;
+    }
+    
+    .character-image img {
+        max-width: 180px;
+    }
+    
+    .character-details h3 {
+        font-size: 1.1rem;
+    }
+    
+    .character-details ul {
+        font-size: 0.95rem;
+    }
+    
+    .outcome-circle {
+        width: 180px;
+        height: 180px;
+        padding: 20px;
+        font-size: 0.85rem;
+    }
+    
+    .layer-number {
+        font-size: 2rem;
+    }
+    
+    .layer-content h4 {
+        font-size: 1rem;
+    }
+    
+    .layer-content ul {
+        font-size: 0.95rem;
+    }
+    
+    .process-timeline {
         padding-left: 25px;
-        position: relative;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 400;
+        gap: 35px;
     }
-
-    .reflection-block li:last-child {
-        margin-bottom: 0;
+    
+    .process-timeline::before {
+        left: 12px;
     }
-
-    .reflection-block li::before {
-        content: "•";
-        color: #1e3932;
-        font-weight: bold;
+    
+    .process-marker {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+        margin-left: -25px;
+    }
+    
+    .process-content h3 {
+        font-size: 1rem;
+    }
+    
+    .process-content p {
+        font-size: 0.95rem;
+    }
+    
+    .pv-item,
+    .pv-item-reverse {
+        padding: 25px;
+        gap: 20px;
+    }
+    
+    .pv-text h3 {
         font-size: 1.2rem;
-        position: absolute;
-        left: 0;
-        top: -2px;
     }
-
-    .reflection-block.next-steps li::before {
-        color: #5a4a6a;
+    
+    .pv-text p {
+        font-size: 0.9rem;
     }
-
-.cta-container {
-    display: flex;
-    flex-direction: column;  
-    align-items: center;     
-    gap: 12px;   
-    margin: 40px 0 60px;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 14px 32px;
-    background-color: #1e3932;
-    color: #f5f6f0;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    border-radius: 30px;
-    box-shadow: 0 10px 24px rgba(30, 57, 50, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-
-.cta-button:hover {
-    background-color: #14573f;
-    transform: translateY(-2px);
-    box-shadow: 0 14px 28px rgba(30, 57, 50, 0.25);
-}
-
-.cta-note {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #444;
-    text-align: center;
-    max-width: 600px;
+    
+    .pv-media {
+        padding: 0;
+    }
+    
+    .reflection-block {
+        padding: 20px;
+    }
+    
+    .reflection-block h3 {
+        font-size: 1.2rem;
+    }
+    
+    .reflection-block li {
+        font-size: 0.95rem;
+    }
+    
+    .cta-button {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+    }
+    
+    .cta-note {
+        font-size: 0.9rem;
+        padding: 0 15px;
+    }
+    
+    .project-navigation {
+        padding: 15px 15px 30px;
+    }
+    
+    .nav-button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
 }

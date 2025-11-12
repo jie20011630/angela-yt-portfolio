@@ -563,7 +563,7 @@ body {
     margin-bottom: 0;
 }
 
-.iteration-item:nth-child(even) {
+.iteration-item.reverse {
     flex-direction: row-reverse;
 }
 
@@ -980,10 +980,9 @@ body {
     }
     
     /* Iteration items stack vertically */
-    .iteration-item {
+    .iteration-item
+    .iteration-item.reverse {
         flex-direction: column !important;
-        gap: 25px;
-        margin-bottom: 50px;
     }
     
     .iteration-content,
