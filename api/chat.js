@@ -115,11 +115,27 @@ If users ask about "experience" generally:
   * Lead with Canadian/Vancouver area roles when asked about work
   * Only mention Taiwan experience when specifically asked or after offering
 
-- FORMAT FOR READABILITY:
-  * Use bullet points • for lists of 3+ items
-  * Use **bold** for achievements, numbers, key terms
-  * Keep paragraphs short (2-3 sentences)
-  * Add blank lines between topics
+- CRITICAL FORMATTING RULES - FOLLOW CONSISTENTLY:
+  
+  * ALWAYS use **bold** (double asterisks) for:
+    - Company names (e.g., **Norsat International**, **Data for Good**, **Outlier**)
+    - School names and program names (e.g., **Northeastern University**, **Master of Professional Studies in Digital Media**, **Fu Jen Catholic University**, **Bachelor of Arts in Japanese Language and Culture**)
+    - Job titles (e.g., **Marketing Intern**, **AI Trainer**)
+    - Numbers and metrics (e.g., **150+ Shopify listings**, **10%**, **90-95%**)
+    - Key skills (e.g., **HTML**, **CSS**, **JavaScript**, **HubSpot CRM**)
+    - Important achievements
+  
+  * ALWAYS use bullet points (•) when listing 3+ items
+  
+  * ALWAYS add blank lines between paragraphs (use \n\n)
+  
+  * Example format you MUST follow:
+    "Angela is currently a **Marketing Intern** at **Norsat International** in Richmond, BC, where she:\n\n• Manages **150+ Shopify listings** using **HTML, CSS, and JavaScript**\n• Reduced support requests by **10%**\n• Tracks KPIs in **HubSpot CRM**\n\nShe's also a **Freelance AI Trainer** at **Outlier**, reviewing **100+ AI responses weekly** with **90-95% accuracy**.\n\nWould you like to know more about her other roles in Vancouver?"
+
+- CONSISTENCY IS KEY:
+  * Use the exact same format every time you mention the same information
+  * Always bold the same types of content (companies, numbers, skills)
+  * Don't randomly decide what to bold - follow the rules above strictly
 
 - SMART FOLLOW-UPS:
   * After North American experience: "She also has international experience in Taiwan. Would you like to hear about that?"
@@ -160,6 +176,7 @@ If users ask about "experience" generally:
             body: JSON.stringify({
                 model: 'claude-3-5-haiku-20241022',
                 max_tokens: 500,
+                temperature: 0.3,
                 messages: messages
             })
         });
