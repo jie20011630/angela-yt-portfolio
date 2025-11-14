@@ -866,42 +866,53 @@ html {
     }
 
     .hero {
-        min-height: auto;
-        padding: 110px 20px 70px;  /* ⬅️ 增加底部空間 */
+        min-height: 0;  /* ⬅️ 移除 min-height! */
+        height: auto;  /* ⬅️ 讓內容決定高度 */
+        padding: 110px 20px 80px;
+        overflow: visible;
     }
     
     .hero-content {
         flex-direction: column-reverse;
         gap: 40px;
         text-align: center;
+        overflow: visible;
     }
     
     .hero-text {
         max-width: 100%;
+        width: 100%;
+        overflow: visible;
+        padding-bottom: 0;  /* ⬅️ 移除額外 padding */
     }
     
     .hero h1 {
         font-size: 2.5rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
     }
     
     .hero-subtitle {
         font-size: 1rem;
-        margin-bottom: 15px;  /* ⬅️ 確保有 margin */
+        margin-bottom: 12px;
+        line-height: 1.5;
     }
     
     .hero-welcome {
         font-size: 1.4rem;
-        display: block;  /* ⬅️ 確保顯示! */
-        margin-top: 10px;  /* ⬅️ 加一點間距 */
+        margin-top: 10px;
+        display: block !important;
+        line-height: 1.6;
+        margin-bottom: 0;  /* ⬅️ 確保沒有負 margin */
     }
     
     .hero-image {
-        flex: 0 0 260px;
+        flex: 0 0 auto;
     }
     
     .hero-image img {
-        width: 240px;
-        height: 300px;
+        width: 260px;
+        height: 330px;
         border-radius: 45% 55% 50% 50%;
     }
 
@@ -999,35 +1010,46 @@ html {
     }
 
     .hero {
-        padding: 100px 15px 60px;  /* ⬅️ 增加底部空間 */
+        min-height: 0;  /* ⬅️ 移除 min-height! */
+        height: auto;
+        padding: 100px 15px 70px;
+        overflow: visible;
     }
     
     .hero-content {
         gap: 30px;
+        overflow: visible;
+    }
+    
+    .hero-text {
+        overflow: visible;
     }
     
     .hero h1 {
         font-size: 2rem;
+        margin-bottom: 12px;
     }
     
     .hero-subtitle {
         font-size: 0.95rem;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
     
     .hero-welcome {
         font-size: 1.2rem;
-        display: block;  /* ⬅️ 確保顯示! */
         margin-top: 8px;
+        display: block !important;
+        line-height: 1.5;
     }
     
     .hero-image {
-        flex: 0 0 200px;
+        flex: 0 0 auto;
+        margin-bottom: 25px;
     }
     
     .hero-image img {
-        width: 200px;
-        height: 250px;
+        width: 220px;
+        height: 280px;
         border-radius: 45% 55% 50% 50%;
     }
 
