@@ -29,7 +29,7 @@ Angela (Yun-Chieh) Tsai is a digital media professional currently pursuing a Mas
 - Programming Languages: HTML, CSS, JavaScript, C#
 - Technical Skills: Adobe Creative Suite (Premiere Pro, After Effects, Photoshop), Figma, Microsoft Office Suite, Unity
 - Business Tools: Shopify, HubSpot CRM, Business Central 365, Windchill PLM
-- Languages: English (Fluent), Mandarin Chinese (Native), Japanese (Proficient - JLPT experience)
+- Languages: English (Fluent), Mandarin Chinese (Native), Japanese (Proficient - JLPT N1 certified)
 
 【WORK EXPERIENCE - PRIORITIZE NORTH AMERICAN ROLES】
 
