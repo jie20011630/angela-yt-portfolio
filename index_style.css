@@ -866,9 +866,9 @@ html {
     }
 
     .hero {
-        min-height: 0;  /* ⬅️ 移除 min-height! */
-        height: auto;  /* ⬅️ 讓內容決定高度 */
-        padding: 110px 20px 80px;
+        min-height: 0;
+        height: auto;
+        padding: 110px 20px 60px;  /* ⬅️ 減少底部 padding */
         overflow: visible;
     }
     
@@ -883,31 +883,29 @@ html {
         max-width: 100%;
         width: 100%;
         overflow: visible;
-        padding-bottom: 0;  /* ⬅️ 移除額外 padding */
     }
     
     .hero h1 {
         font-size: 2.5rem;
         margin-bottom: 15px;
-        line-height: 1.2;
     }
     
     .hero-subtitle {
         font-size: 1rem;
         margin-bottom: 12px;
-        line-height: 1.5;
     }
     
     .hero-welcome {
         font-size: 1.4rem;
         margin-top: 10px;
+        margin-bottom: 20px;  /* ⬅️ 加底部 margin! */
         display: block !important;
         line-height: 1.6;
-        margin-bottom: 0;  /* ⬅️ 確保沒有負 margin */
     }
     
     .hero-image {
         flex: 0 0 auto;
+        margin-bottom: 30px;
     }
     
     .hero-image img {
@@ -916,7 +914,11 @@ html {
         border-radius: 45% 55% 50% 50%;
     }
 
-    .projects,
+    .projects {
+        margin-top: 0 !important;  /* ⬅️ 強制移除! */
+        padding: 40px 20px;
+    }
+
     .featured-works {
         padding: 40px 20px;
     }
@@ -1010,9 +1012,9 @@ html {
     }
 
     .hero {
-        min-height: 0;  /* ⬅️ 移除 min-height! */
+        min-height: 0;
         height: auto;
-        padding: 100px 15px 70px;
+        padding: 100px 15px 50px;
         overflow: visible;
     }
     
@@ -1027,7 +1029,6 @@ html {
     
     .hero h1 {
         font-size: 2rem;
-        margin-bottom: 12px;
     }
     
     .hero-subtitle {
@@ -1038,12 +1039,11 @@ html {
     .hero-welcome {
         font-size: 1.2rem;
         margin-top: 8px;
+        margin-bottom: 15px;  /* ⬅️ 重要! */
         display: block !important;
-        line-height: 1.5;
     }
     
     .hero-image {
-        flex: 0 0 auto;
         margin-bottom: 25px;
     }
     
@@ -1053,7 +1053,11 @@ html {
         border-radius: 45% 55% 50% 50%;
     }
 
-    .projects,
+    .projects {
+        margin-top: 0 !important;  /* ⬅️ 強制移除! */
+        padding: 30px 15px;
+    }
+
     .featured-works {
         padding: 30px 15px;
     }
