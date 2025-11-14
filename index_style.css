@@ -886,10 +886,13 @@ html {
     
     .hero-subtitle {
         font-size: 1rem;
+        margin-bottom: 15px;  /* ⬅️ 確保有 margin */
     }
     
     .hero-welcome {
         font-size: 1.4rem;
+        display: block;  /* ⬅️ 確保顯示! */
+        margin-top: 10px;  /* ⬅️ 加一點間距 */
     }
     
     .hero-image {
@@ -1009,10 +1012,13 @@ html {
     
     .hero-subtitle {
         font-size: 0.95rem;
+        margin-bottom: 12px;
     }
     
     .hero-welcome {
         font-size: 1.2rem;
+        display: block;  /* ⬅️ 確保顯示! */
+        margin-top: 8px;
     }
     
     .hero-image {
