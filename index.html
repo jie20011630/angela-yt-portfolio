@@ -21,17 +21,19 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#featured-works">Featured Works</a></li>
             </ul>
             <a href="about/chatbot.html" class="cta-nav-button">💬 Ask Me Anything</a>
         </nav>
     </header>
 
-   <!-- Hero Section -->
+<!-- Hero Section -->
 <section id="hero" class="hero">
     <div class="hero-content">
         <div class="hero-text">
-            <h1>Hi, I'm <span class="highlight-name">Angela Tsai</span></h1>
+            <h1>Hi, I'm <span class="name-carousel">
+                <span class="name-item active">Yun-Chieh</span>
+                <span class="name-item">Angela</span>
+            </span></h1>
             <p class="hero-subtitle">Digital Marketer | Experience Designer | Problem-solver</p>
             <p class="hero-welcome">Welcome to my portfolio.</p>
         </div>
@@ -41,147 +43,168 @@
     </div>
 </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        
-<!-- Project 1: Kana Master -->
-<div class="project-card animate-on-scroll">
-    <div class="project-info">
-        <h3>Kana Master</h3>
-        <p>Designed an interactive web tool with AI-powered pronunciation feedback to help Japanese learners master Hiragana, improving speaking confidence for users who previously struggled with pitch accent recognition.</p>
-        <div class="project-tags">
-            <span class="tag">Web Design</span>
-            <span class="tag">UX/UI Design</span>
-            <span class="tag">AI Integration</span>
-            <span class="tag">Interactive Learning</span>
-        </div>
-    </div>
-    <div class="project-image">
-        <div class="image-overlay">
-            <img src="Pic/kanamaster.png" alt="Kana Master Web">
-            <div class="overlay-content">
-                <a href="project1/project1.html" class="overlay-btn">View Project</a>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Project 2: Promotional Video (Data for Good) -->
-<div class="project-card animate-on-scroll">
-    <div class="project-info">
-        <h3>Promotional Video<br>(Data for Good)</h3>
-        <p>Created a 2D animated promotional video that transforms complex data concepts into an accessible visual story, helping Data for Good expand brand awareness and attract nonprofit partners and volunteers.</p>
-        <div class="project-tags">
-            <span class="tag">Video Production</span>
-            <span class="tag">Digital Storytelling</span>
-            <span class="tag">Brand Strategy</span>
-            <span class="tag">Motion Design</span>
-        </div>
+<!-- Projects Section -->
+<section id="projects" class="projects">
+    <h2>Projects</h2>
+    
+    <!-- Filter 按鈕 -->
+    <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="ux">UX Design</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+        <button class="filter-btn" data-filter="video">Video Production</button>
+        <button class="filter-btn" data-filter="game">Game Design</button>
     </div>
-    <div class="project-image">
-        <div class="image-overlay">
-            <img src="Pic/promotional_ani.png" alt="Promotional Video">
-            <div class="overlay-content">
-                <a href="project2/project2.html" class="overlay-btn">View Project</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Project 3: AskBC -->
-<div class="project-card animate-on-scroll">
-    <div class="project-info">
-        <h3>AskBC</h3>
-        <p>Led the design and research for an AI chatbot prototype that guides BC residents through complex tax processes with personalized, step-by-step instructions—reducing reliance on external help for older adults and non-English speakers.</p>
-        <div class="project-tags">
-            <span class="tag">UX Research</span>
-            <span class="tag">Conversational Design</span>
-            <span class="tag">Accessibility</span>
-            <span class="tag">Project Management</span>
-        </div>
-    </div>
-    <div class="project-image">
-        <div class="image-overlay">
-            <img src="project3/askbc.png" alt="AskBC">
-            <div class="overlay-content">
-                <a href="project3/project3.html" class="overlay-btn">View Project</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Project 4: Mic Check 1,2 -->
-<div class="project-card animate-on-scroll">
-    <div class="project-info">
-        <h3>Mic Check 1,2</h3>
-        <p>Designed and developed an interactive narrative game using branching dialogue and time-sensitive mechanics to translate the psychological experience of performance anxiety into an immersive player experience.</p>
-        <div class="project-tags">
-            <span class="tag">Game Design</span>
-            <span class="tag">Narrative Design</span>
-            <span class="tag">Video Production</span>
-            <span class="tag">Generative AI Design</span>
-        </div>
-    </div>
-    <div class="project-image">
-        <div class="image-overlay">
-            <img src="project4/mic_check.png" alt="Mic Check 1,2">
-            <div class="overlay-content">
-                <a href="project4/project4.html" class="overlay-btn">View Project</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-    </section>
-
-    <!-- Featured Works Section -->
-    <section id="featured-works" class="featured-works">
-        <h2>Featured Works</h2>
-        
-        <div class="works-carousel">
-            <div class="carousel-container">
-                <div class="works-track" id="worksTrack">
-                    <!-- Works will be dynamically generated -->
+    
+    <!-- Projects Grid (2 columns) -->
+    <div class="projects-grid">
+        <!-- Project 5: Social Media Projects (新增!) -->
+        <div class="project-card-new" data-category="marketing">
+            <div class="project-card-image">
+                <img src="Pic/social-media-preview.png" alt="Social Media Projects">
+                <div class="project-overlay">
+                    <a href="social-media-projects/social-media.html" class="project-link">Learn more</a>
                 </div>
             </div>
-            
-            <div class="carousel-navigation">
-                <button class="nav-btn prev-btn" id="prevBtn"><<</button>
-                <button class="nav-btn next-btn" id="nextBtn">>></button>
+            <div class="project-card-content">
+                <h3>Social Media Projects</h3>
+                <p class="project-client">Multiple Clients</p>
+                <p class="project-description">A collection of social media content, campaigns, and strategies across LinkedIn, Instagram, and other platforms.</p>
+                <div class="project-tags">
+                    <span class="tag-small">Social Media</span>
+                    <span class="tag-small">Content Creation</span>
+                    <span class="tag-small">Engagement</span>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Featured Works Modal -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">×</button>
-            
-            <div class="modal-main">
-                <div class="modal-left">
-                    <div class="modal-image-container">
-                        <img class="modal-image" id="modalImage" src="" alt="">
-                        <button class="image-nav prev-image" id="prevImage">‹</button>
-                        <button class="image-nav next-image" id="nextImage">›</button>
+        
+            <!-- Project 3: AskBC -->
+            <div class="project-card-new" data-category="ux">
+                <div class="project-card-image">
+                    <img src="askbc/askbc.png" alt="AskBC">
+                       <div class="project-overlay">
+                        <a href="askbc/askbc.html" class="project-link">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>AskBC</h3>
+                        <p class="project-client">Academic Project</p>
+                        <p class="project-description">Led the design and research for an AI chatbot prototype that guides BC residents through complex tax processes.</p>
+                    <div class="project-tags">
+                        <span class="tag-small">UX Research</span>
+                        <span class="tag-small">Conversational Design</span>
+                        <span class="tag-small">Accessibility</span>
                     </div>
                 </div>
-                
-                <div class="modal-right">
-                    <h3 class="modal-title" id="modalTitle"></h3>
-                    <div class="client-pill">Linkedin Post</div>
-                    <p class="modal-description" id="modalDescription"></p>
-                    
-                    <a class="modal-link" id="modalLink" href="" target="_blank"></a>
+            </div>
+
+            <!-- Project 6: Writing Samples (新增!) -->
+        <div class="project-card-new" data-category="marketing">
+            <div class="project-card-image">
+                <img src="Pic/writing-samples.png" alt="Writing Samples">
+                <div class="project-overlay">
+                    <a href="writing-samples/writing-samples.html" class="project-link">Learn more</a>
                 </div>
             </div>
-            
-            <div class="modal-bottom">
-                <button class="modal-nav prev-work" id="prevWork"><< Prev Work</button>
-                <button class="modal-nav next-work" id="nextWork">Next Work >></button>
+            <div class="project-card-content">
+                <h3>Writing Samples</h3>
+                <p class="project-client">B2B SaaS & Marketing</p>
+                <p class="project-description">Professional writing samples including blog posts, case studies, and marketing copy for various clients.</p>
+                <div class="project-tags">
+                    <span class="tag-small">Copywriting</span>
+                    <span class="tag-small">Content Strategy</span>
+                    <span class="tag-small">B2B Marketing</span>
+                </div>
             </div>
         </div>
+        
+        <!-- Project 2: Data for Good Video -->
+        <div class="project-card-new" data-category="marketing video">
+            <div class="project-card-image">
+                <img src="Pic/promotional_ani.png" alt="Data for Good Video">
+                <div class="project-overlay">
+                    <a href="dfg-animation/dfg-animation.html" class="project-link">Learn more</a>
+                </div>
+            </div>
+            <div class="project-card-content">
+                <h3>Promotional Video (Data for Good)</h3>
+                <p class="project-client">Data for Good Vancouver</p>
+                <p class="project-description">Created a 2D animated promotional video that transforms complex data concepts into an accessible visual story.</p>
+                <div class="project-tags">
+                    <span class="tag-small">Video Production</span>
+                    <span class="tag-small">Brand Strategy</span>
+                    <span class="tag-small">Motion Design</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4: Mic Check -->
+        <div class="project-card-new" data-category="game video">
+            <div class="project-card-image">
+                <img src="mic-check12/mic_check.png" alt="Mic Check 1,2">
+                <div class="project-overlay">
+                    <a href="mic-check12/mic-check12.html" class="project-link">Learn more</a>
+                </div>
+            </div>
+            <div class="project-card-content">
+                <h3>Mic Check 1,2</h3>
+                <p class="project-client">Academic Project</p>
+                <p class="project-description">Designed and developed an interactive narrative game using branching dialogue and time-sensitive mechanics.</p>
+                <div class="project-tags">
+                    <span class="tag-small">Game Design</span>
+                    <span class="tag-small">Digital Storytelling</span>
+                    <span class="tag-small">Video Production</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 1: Kana Master -->
+        <div class="project-card-new" data-category="ux">
+            <div class="project-card-image">
+                <img src="Pic/kanamaster.png" alt="Kana Master">
+                <div class="project-overlay">
+                    <a href="kana-master/kana-master.html" class="project-link">Learn more</a>
+                </div>
+            </div>
+            <div class="project-card-content">
+                <h3>Kana Master</h3>
+                <p class="project-client">Academic Project</p>
+                <p class="project-description">Designed an interactive web tool with AI-powered pronunciation feedback to help Japanese learners master Hiragana.</p>
+                <div class="project-tags">
+                    <span class="tag-small">Web Design</span>
+                    <span class="tag-small">UX/UI</span>
+                    <span class="tag-small">AI Integration</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Project 7: GTM Strategy (新增!) -->
+        <!-- <div class="project-card-new" data-category="marketing">
+            <div class="project-card-image">
+                <img src="Pic/gtm-preview.jpg" alt="GTM Strategy">
+                <div class="project-overlay">
+                    <a href="project7/project7.html" class="project-link">Learn more</a>
+                </div>
+            </div>
+            <div class="project-card-content">
+                <h3>Go-to-Market Strategy</h3>
+                <p class="project-client">Product Launch Projects</p>
+                <p class="project-description">Strategic planning and execution for product launches, including market research and campaign development.</p>
+                <div class="project-tags">
+                    <span class="tag-small">Strategy</span>
+                    <span class="tag-small">Market Research</span>
+                    <span class="tag-small">Campaign Planning</span>
+                </div>
+            </div>
+        </div> -->
+
     </div>
+</section>
+
+    </div> <!-- ⬅️ 關閉 projects-container -->
+</section>
 
     <!-- Footer -->
     <footer>
@@ -197,6 +220,7 @@
 
     <script src="autohideheader.js"></script>
     <script src="scrollanimation.js"></script>
-    <script src="featured-works.js"></script>
+    <script src="project-filter.js"></script>
+    <script src="name-carousel.js"></script>
 </body>
 </html>

@@ -1,0 +1,447 @@
+body {
+    background-color: #f5f6f0;
+    padding-top: 0;
+}
+
+/* Project Title */
+.project-title {
+    padding: 100px 80px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-title h1 {
+    font-size: 2.5rem;
+    color: #1e3932;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Project Details */
+.project-details {
+    display: flex;
+    padding: 40px 80px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f6f0;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.project-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.project-info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 20px;
+}
+
+/* Client Pills Container */
+.client-pills-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.client-pill {
+    display: inline-block;
+    background-color: #e7f7e0;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 30px;
+    width: fit-content;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-item h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e3932;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.info-item p {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Project Overview */
+.project-overview {
+    padding: 40px 80px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-overview h2 {
+    font-size: 1.8rem;
+    color: #1e3932;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-overview p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    max-width: 100%;
+}
+
+/* Writing Sample Sections */
+.writing-sample-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 80px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.writing-sample-section:nth-child(odd) {
+    background-color: #e8f5e0;
+}
+
+.writing-sample-section:nth-child(even) {
+    background-color: #f5f6f0;
+}
+
+/* Left Image Layout */
+.writing-sample-section.left-image {
+    flex-direction: row;
+}
+
+/* Right Image Layout */
+/* .writing-sample-section.right-image {
+    flex-direction: row-reverse;
+} */
+
+/* Full Width Layout (for Norsat section) */
+.writing-sample-section.full-width {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sample-image {
+    flex: 0 0 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sample-image img {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.sample-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sample-content h2 {
+    font-size: 1.6rem;
+    color: #1e3932;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.sample-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    font-family: 'Poppins', sans-serif;
+}
+
+.read-article-btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 12px 28px;
+    background-color: #1e3932;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(30, 57, 50, 0.3);
+}
+
+.read-article-btn:hover {
+    background-color: #14473a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 57, 50, 0.4);
+}
+
+.read-article-btn.small {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+/* Norsat Section */
+.section-header {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    color: #1e3932;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.section-header p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    font-family: 'Poppins', sans-serif;
+}
+
+.manuals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.manual-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.manual-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.manual-preview {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manual-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.manual-card h3 {
+    font-size: 1.1rem;
+    color: #1e3932;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Navigation Buttons */
+.project-navigation {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 80px 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f5f6f0;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #fff;
+    color: #1e3932;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+    background-color: #1e3932;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+    .project-title {
+        padding: 100px 40px 10px;
+    }
+    
+    .project-details,
+    .project-overview,
+    .writing-sample-section {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    
+    .project-navigation {
+        padding: 20px 40px 60px;
+    }
+    
+    .manuals-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Mobile Large (768px and below) */
+@media (max-width: 768px) {
+    .project-title {
+        padding: 90px 20px 10px;
+    }
+    
+    .project-title h1 {
+        font-size: 2rem;
+    }
+    
+    .project-details {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+    
+    .project-info-container {
+        padding-left: 0;
+    }
+    
+    .project-overview,
+    .writing-sample-section {
+        padding: 40px 20px;
+    }
+    
+    .writing-sample-section.left-image,
+    .writing-sample-section.right-image {
+        flex-direction: column;
+    }
+    
+    .sample-image {
+        flex: none;
+        width: 100%;
+    }
+    
+    .sample-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    .manuals-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-navigation {
+        padding: 20px 20px 40px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-button {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Mobile Small (480px and below) */
+@media (max-width: 480px) {
+    .project-title {
+        padding: 80px 15px 10px;
+    }
+    
+    .project-title h1 {
+        font-size: 1.7rem;
+    }
+    
+    .project-details,
+    .project-overview,
+    .writing-sample-section {
+        padding: 30px 15px;
+    }
+    
+    .client-pills-container {
+        gap: 8px;
+    }
+    
+    .client-pill {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+    
+    .sample-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .sample-content p {
+        font-size: 0.95rem;
+    }
+    
+    .read-article-btn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .manual-card h3 {
+        font-size: 1rem;
+    }
+    
+    .project-navigation {
+        padding: 15px 15px 30px;
+    }
+    
+    .nav-button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
