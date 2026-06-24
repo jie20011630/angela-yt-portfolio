@@ -3,6 +3,11 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
+    if (!process.env.ANTHROPIC_API_KEY) {
+        console.error('ANTHROPIC_API_KEY is not set');
+        return res.status(500).json({ error: 'Server misconfigured: missing API key' });
+    }
+
     const { message, history } = req.body;
 
     const resumeInfo = `
@@ -257,7 +262,7 @@ If users ask about contact preferences:
                 'anthropic-version': '2023-06-01'
             },
             body: JSON.stringify({
-                model: 'claude-3-5-haiku-20241022',
+                model: 'claude-haiku-4-5-20251001',
                 max_tokens: 500,
                 temperature: 0.3,
                 messages: messages
@@ -265,13 +270,24 @@ If users ask about contact preferences:
         });
 
         const data = await response.json();
-        
+
+        if (!response.ok) {
+            // Surface the real upstream error (e.g. invalid key, no credits, rate limit)
+            console.error('Anthropic API error:', response.status, data);
+            const upstreamMsg = data?.error?.message || JSON.stringify(data);
+            return res.status(502).json({
+                error: 'AI service error',
+                status: response.status,
+                details: upstreamMsg
+            });
+        }
+
         if (data.content && data.content[0]) {
             return res.status(200).json({
                 reply: data.content[0].text
             });
         } else {
-            throw new Error('Invalid response from Claude');
+            throw new Error('Invalid response from Claude: ' + JSON.stringify(data));
         }
 
     } catch (error) {
